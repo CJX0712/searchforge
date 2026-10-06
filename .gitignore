@@ -1,0 +1,39 @@
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+
+# --- Python 产物 ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.mypy_cache/
+.ruff_cache/
+
+# --- 测试 / 覆盖率 ---
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- 生成产物（benchmark 结果、缓存） ---
+benchmark*.json
+!benchmark.json
+artifacts/
+data_cache/
+
+# --- 模型权重 / 密钥 ---
+*.bin
+*.pkl
+*.joblib
+.env
+*.key
+secrets.*
+
+# --- 编辑器 / 系统 ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

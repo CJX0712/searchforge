@@ -1,0 +1,9 @@
+# SearchForge 运行时依赖（版本锁定，作者 晨星）
+# 说明：全部依赖均有 win_amd64 / manylinux 预编译 wheel，无需源码编译。
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+lightgbm==4.7.0
+rank-bm25==0.2.2
+faiss-cpu==1.15.1
+optuna==5.0.0
