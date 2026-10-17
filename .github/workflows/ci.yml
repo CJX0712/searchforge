@@ -42,7 +42,9 @@ jobs:
 
       - name: Secret self-check
         run: |
-          if git grep -nI -E "(sk-|api[_-]?key|token|secret|password)" -- '*.py' '*.md'; then
+          # 只匹配"赋值形式的凭据"（引号内高熵串），而不是 tokenize/token 这类术语，
+          # 否则扫描器会命中自己 README 里写的这条命令本身。
+          if git grep -nI -E "(sk-[A-Za-z0-9]{20,}|(api[_-]?key|secret|password|access[_-]?token)[[:space:]]*[=:][[:space:]]*['\"][A-Za-z0-9_/+-]{16,}['\"])" -- '*.py' '*.md'; then
             echo "::error::potential secret found"
             exit 1
           fi
